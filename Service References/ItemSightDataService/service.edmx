@@ -1,0 +1,435 @@
+﻿<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <edmx:DataServices m:DataServiceVersion="3.0" m:MaxDataServiceVersion="3.0" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata">
+    <Schema Namespace="isserver.dx.data" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <EntityType Name="BizLocationEx">
+        <Key>
+          <PropertyRef Name="BizLocationID" />
+        </Key>
+        <Property Name="BizLocationID" Type="Edm.Int64" Nullable="false" />
+        <Property Name="BizLocationDescription" Type="Edm.String" />
+        <Property Name="CountOrders" Type="Edm.Int32" Nullable="false" />
+        <Property Name="CountCartons" Type="Edm.Int32" Nullable="false" />
+        <Property Name="CountItems" Type="Edm.Int32" />
+        <Property Name="CountReadPoints" Type="Edm.Int32" Nullable="false" />
+        <Property Name="LastActivity" Type="Edm.DateTime" />
+        <NavigationProperty Name="BizLocation" Relationship="isserver.dx.data.BizLocationEx_BizLocation" ToRole="BizLocation" FromRole="BizLocationEx" />
+      </EntityType>
+      <EntityType Name="BizLocation">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Number" Type="Edm.String" />
+        <Property Name="Description" Type="Edm.String" />
+        <Property Name="BizLocationTypeID" Type="Edm.Int32" Nullable="false" />
+        <Property Name="BizSubLocationTypeID" Type="Edm.Int32" Nullable="false" />
+        <Property Name="parentID" Type="Edm.Int32" />
+        <Property Name="rootID" Type="Edm.Int32" />
+        <Property Name="AddressLine1" Type="Edm.String" />
+        <Property Name="AddressLine2" Type="Edm.String" />
+        <Property Name="City" Type="Edm.String" />
+        <Property Name="StateProvinceRegion" Type="Edm.String" />
+        <Property Name="ZIPPostalCode" Type="Edm.String" />
+        <Property Name="Country" Type="Edm.String" />
+        <Property Name="NetAddress" Type="Edm.String" />
+        <Property Name="NetPort" Type="Edm.Int32" />
+        <Property Name="Username" Type="Edm.String" />
+        <Property Name="Password" Type="Edm.String" />
+        <Property Name="IsActive" Type="Edm.Boolean" Nullable="false" />
+      </EntityType>
+      <EntityType Name="BizSubLocation" BaseType="isserver.dx.data.BizLocation" />
+      <EntityType Name="ReadPointEx">
+        <Key>
+          <PropertyRef Name="ReadPointID" />
+        </Key>
+        <Property Name="ReadPointID" Type="Edm.Int64" Nullable="false" />
+        <Property Name="CountCartons" Type="Edm.Int32" Nullable="false" />
+        <Property Name="CountItems" Type="Edm.Int32" />
+        <Property Name="LastActivity" Type="Edm.DateTime" />
+        <NavigationProperty Name="ReadPoint" Relationship="isserver.dx.data.ReadPointEx_ReadPoint" ToRole="ReadPoint" FromRole="ReadPointEx" />
+      </EntityType>
+      <EntityType Name="ReadPoint">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Number" Type="Edm.String" />
+        <Property Name="Description" Type="Edm.String" />
+        <Property Name="bizLocationID" Type="Edm.Int32" />
+        <Property Name="ReadPointTypeID" Type="Edm.Int32" Nullable="false" />
+      </EntityType>
+      <EntityType Name="OrderEx">
+        <Key>
+          <PropertyRef Name="OrderID" />
+        </Key>
+        <Property Name="OrderID" Type="Edm.Int64" Nullable="false" />
+        <Property Name="OrderNumber" Type="Edm.String" />
+        <Property Name="QtyTotal" Type="Edm.Int32" Nullable="false" />
+        <Property Name="QtyComplete" Type="Edm.Int32" Nullable="false" />
+        <Property Name="QtyBalance" Type="Edm.Int32" Nullable="false" />
+        <Property Name="CustomerName" Type="Edm.String" />
+        <Property Name="VendorName" Type="Edm.String" />
+        <NavigationProperty Name="Order" Relationship="isserver.dx.data.OrderEx_Order" ToRole="Order" FromRole="OrderEx" />
+      </EntityType>
+      <EntityType Name="Order">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.Int64" Nullable="false" />
+        <Property Name="OrderNumber" Type="Edm.String" />
+        <Property Name="OrderDate" Type="Edm.DateTime" />
+        <Property Name="RequiredDate" Type="Edm.DateTime" />
+        <Property Name="ownerID" Type="Edm.Int32" />
+        <Property Name="customerID" Type="Edm.Int32" />
+        <Property Name="vendorID" Type="Edm.Int32" />
+      </EntityType>
+      <EntityType Name="OrderLineEx">
+        <Key>
+          <PropertyRef Name="OrderLineID" />
+        </Key>
+        <Property Name="OrderLineID" Type="Edm.Int64" Nullable="false" />
+        <Property Name="QtyComplete" Type="Edm.Int32" />
+        <Property Name="QtyBalance" Type="Edm.Int32" Nullable="false" />
+        <Property Name="OrderDate" Type="Edm.DateTime" />
+        <Property Name="RequiredDate" Type="Edm.DateTime" />
+        <NavigationProperty Name="Order" Relationship="isserver.dx.data.OrderLineEx_Order" ToRole="Order" FromRole="OrderLineEx" />
+        <NavigationProperty Name="OrderLine" Relationship="isserver.dx.data.OrderLineEx_OrderLine" ToRole="OrderLine" FromRole="OrderLineEx" />
+      </EntityType>
+      <EntityType Name="OrderLine">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.Int64" Nullable="false" />
+        <Property Name="OrderNumber" Type="Edm.String" />
+        <Property Name="orderID" Type="Edm.Int64" />
+        <Property Name="LineNumber" Type="Edm.String" />
+        <Property Name="OrderDate" Type="Edm.DateTime" />
+        <Property Name="RequiredDate" Type="Edm.DateTime" />
+        <Property Name="ShipTo" Type="Edm.String" />
+        <Property Name="Vendor" Type="Edm.String" />
+        <Property Name="productID" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Qty" Type="Edm.Int32" Nullable="false" />
+        <Property Name="QtyPerPack" Type="Edm.Int32" />
+        <Property Name="ownerID" Type="Edm.Int32" />
+        <NavigationProperty Name="Product" Relationship="isserver.dx.data.OrderLine_Product" ToRole="Product" FromRole="OrderLine" />
+      </EntityType>
+      <EntityType Name="PackingEx">
+        <Key>
+          <PropertyRef Name="PackingID" />
+        </Key>
+        <Property Name="PackingID" Type="Edm.Int64" Nullable="false" />
+        <Property Name="QtyExpected" Type="Edm.Int32" />
+        <Property Name="QtyPackplan" Type="Edm.Int32" />
+        <Property Name="HasItems" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="HasPackplan" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="HasRfidPackplan" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="HasErrors" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="HasOrHadErrors" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="IsClean" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="ErrorCount" Type="Edm.Int32" Nullable="false" />
+        <Property Name="HadIssues" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="IssueCount" Type="Edm.Int32" Nullable="false" />
+        <Property Name="CanBeVerified" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="HasTotalQtyDeficit" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="HasOrHadTotalQtyDeficit" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="HasRePacks" Type="Edm.Boolean" Nullable="false" />
+        <Property Name="NumRePacks" Type="Edm.Int32" Nullable="false" />
+        <Property Name="TimestampEarliest" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="PackingIssuesString" Type="Edm.String" />
+        <Property Name="OrderNumber" Type="Edm.String" />
+        <Property Name="CustomerName" Type="Edm.String" />
+        <Property Name="VendorName" Type="Edm.String" />
+        <NavigationProperty Name="Packing" Relationship="isserver.dx.data.PackingEx_Packing" ToRole="Packing" FromRole="PackingEx" />
+      </EntityType>
+      <EntityType Name="Packing">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.Int64" Nullable="false" />
+        <Property Name="TimeStamp" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="bizLocationID" Type="Edm.Int32" />
+        <Property Name="readPointID" Type="Edm.Int32" />
+        <Property Name="parentID" Type="Edm.Int64" />
+        <Property Name="PackingTypeID" Type="Edm.Int32" Nullable="false" />
+        <Property Name="TagID" Type="Edm.String" />
+        <Property Name="TagTypeID" Type="Edm.Int32" />
+        <Property Name="Count" Type="Edm.Int32" Nullable="false" />
+        <Property Name="InnerCount" Type="Edm.Int32" />
+        <Property Name="orderID" Type="Edm.Int64" />
+        <Property Name="orderLineID" Type="Edm.Int64" />
+        <Property Name="productID" Type="Edm.Int32" />
+        <Property Name="EventStatusID" Type="Edm.Int32" />
+        <Property Name="BizStepID" Type="Edm.Int32" />
+        <Property Name="DispositionID" Type="Edm.Int32" />
+        <NavigationProperty Name="Product" Relationship="isserver.dx.data.Packing_Product" ToRole="Product" FromRole="Packing" />
+      </EntityType>
+      <EntityType Name="PackingProduct">
+        <Key>
+          <PropertyRef Name="ProductID" />
+        </Key>
+        <Property Name="ProductID" Type="Edm.Int64" Nullable="false" />
+        <Property Name="QtyActual" Type="Edm.Int32" Nullable="false" />
+        <Property Name="QtyExpected_" Type="Edm.Int32" />
+        <Property Name="QtyEqualsExpected_" Type="Edm.Boolean" />
+        <NavigationProperty Name="Product" Relationship="isserver.dx.data.PackingProduct_Product" ToRole="Product" FromRole="PackingProduct" />
+        <NavigationProperty Name="Packing" Relationship="isserver.dx.data.PackingProduct_Packing" ToRole="Packing" FromRole="PackingProduct" />
+      </EntityType>
+      <EntityType Name="Product">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="SKUasGTIN" Type="Edm.String" />
+        <Property Name="ID" Type="Edm.Int32" Nullable="false" />
+        <Property Name="SKU" Type="Edm.String" />
+        <Property Name="CodeName" Type="Edm.String" />
+        <Property Name="Description" Type="Edm.String" />
+        <Property Name="Style" Type="Edm.String" />
+        <Property Name="Color" Type="Edm.String" />
+        <Property Name="ColorDescription" Type="Edm.String" />
+        <Property Name="Size" Type="Edm.String" />
+      </EntityType>
+      <EntityType Name="PackingError">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.Int64" Nullable="false" />
+        <Property Name="packingID" Type="Edm.Int64" Nullable="false" />
+        <Property Name="TagID" Type="Edm.String" />
+        <Property Name="PackingErrorTypeID" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Description" Type="Edm.String" />
+      </EntityType>
+      <EntityType Name="PackingIssueEx">
+        <Key>
+          <PropertyRef Name="PackingIssueID" />
+        </Key>
+        <Property Name="PackingIssueID" Type="Edm.Int64" Nullable="false" />
+        <Property Name="PackingIssueTypeCodeName_" Type="Edm.String" />
+        <Property Name="PackingIssueTypeDescription_" Type="Edm.String" />
+        <Property Name="PackingIssueTagID_" Type="Edm.String" />
+        <NavigationProperty Name="PackingIssue" Relationship="isserver.dx.data.PackingIssueEx_PackingIssue" ToRole="PackingIssue" FromRole="PackingIssueEx" />
+      </EntityType>
+      <EntityType Name="PackingIssue">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.Int64" Nullable="false" />
+        <Property Name="packingID" Type="Edm.Int64" Nullable="false" />
+        <Property Name="packingIssueTypeID" Type="Edm.Int32" Nullable="false" />
+        <Property Name="TagID" Type="Edm.String" />
+      </EntityType>
+      <EntityType Name="PackingHistoryErrorEx">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.String" Nullable="false" />
+        <Property Name="TimeStamp" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="TagID" Type="Edm.String" />
+        <Property Name="Description" Type="Edm.String" />
+      </EntityType>
+      <EntityType Name="PackingRun">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.Int32" Nullable="false" />
+        <Property Name="packingID" Type="Edm.Int64" Nullable="false" />
+        <Property Name="TimeStamp" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="bizLocationID" Type="Edm.Int32" />
+        <Property Name="readPointID" Type="Edm.Int32" />
+        <Property Name="InnerCount" Type="Edm.Int32" />
+        <Property Name="EventStatusID" Type="Edm.Int32" />
+        <Property Name="PackingRunItems" Type="Collection(isserver.dx.data.PackingRunItem)" Nullable="false" />
+        <Property Name="PackingRunExclusions" Type="Collection(isserver.dx.data.PackingRunExclusion)" Nullable="false" />
+        <NavigationProperty Name="PackingRunErrors" Relationship="isserver.dx.data.PackingRun_PackingRunErrors" ToRole="PackingRunErrors" FromRole="PackingRun" />
+        <NavigationProperty Name="BizLocation" Relationship="isserver.dx.data.PackingRun_BizLocation" ToRole="BizLocation" FromRole="PackingRun" />
+        <NavigationProperty Name="Packing" Relationship="isserver.dx.data.PackingRun_Packing" ToRole="Packing" FromRole="PackingRun" />
+        <NavigationProperty Name="ReadPoint" Relationship="isserver.dx.data.PackingRun_ReadPoint" ToRole="ReadPoint" FromRole="PackingRun" />
+      </EntityType>
+      <ComplexType Name="PackingRunItem">
+        <Property Name="ID" Type="Edm.Int64" Nullable="false" />
+        <Property Name="packingRunID" Type="Edm.Int32" Nullable="false" />
+        <Property Name="TagID" Type="Edm.String" />
+        <Property Name="TagTypeID" Type="Edm.Int32" />
+        <Property Name="Count" Type="Edm.Int32" Nullable="false" />
+        <Property Name="productID" Type="Edm.Int32" />
+      </ComplexType>
+      <ComplexType Name="PackingRunExclusion">
+        <Property Name="ID" Type="Edm.Int64" Nullable="false" />
+        <Property Name="packingRunID" Type="Edm.Int32" Nullable="false" />
+        <Property Name="TagID" Type="Edm.String" />
+        <Property Name="PackingErrorTypeID" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Description" Type="Edm.String" />
+      </ComplexType>
+      <EntityType Name="PackingRunError">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.Int64" Nullable="false" />
+        <Property Name="packingRunID" Type="Edm.Int32" Nullable="false" />
+        <Property Name="TagID" Type="Edm.String" />
+        <Property Name="PackingErrorTypeID" Type="Edm.Int32" Nullable="false" />
+        <Property Name="Description" Type="Edm.String" />
+      </EntityType>
+      <EntityType Name="BizEntity">
+        <Key>
+          <PropertyRef Name="ID" />
+        </Key>
+        <Property Name="ID" Type="Edm.Int32" Nullable="false" />
+        <Property Name="CodeName" Type="Edm.String" />
+        <Property Name="Name" Type="Edm.String" />
+        <Property Name="Description" Type="Edm.String" />
+        <Property Name="AddressLine1" Type="Edm.String" />
+        <Property Name="AddressLine2" Type="Edm.String" />
+        <Property Name="City" Type="Edm.String" />
+        <Property Name="StateProvinceRegion" Type="Edm.String" />
+        <Property Name="ZIPPostalCode" Type="Edm.String" />
+        <Property Name="Country" Type="Edm.String" />
+        <Property Name="ContactName" Type="Edm.String" />
+        <Property Name="ContactEmail" Type="Edm.String" />
+        <Property Name="ContactPhone" Type="Edm.String" />
+      </EntityType>
+      <Association Name="BizLocationEx_BizLocation">
+        <End Type="isserver.dx.data.BizLocationEx" Role="BizLocationEx" Multiplicity="*" />
+        <End Type="isserver.dx.data.BizLocation" Role="BizLocation" Multiplicity="0..1" />
+      </Association>
+      <Association Name="ReadPointEx_ReadPoint">
+        <End Type="isserver.dx.data.ReadPointEx" Role="ReadPointEx" Multiplicity="*" />
+        <End Type="isserver.dx.data.ReadPoint" Role="ReadPoint" Multiplicity="0..1" />
+      </Association>
+      <Association Name="OrderEx_Order">
+        <End Type="isserver.dx.data.OrderEx" Role="OrderEx" Multiplicity="*" />
+        <End Type="isserver.dx.data.Order" Role="Order" Multiplicity="0..1" />
+      </Association>
+      <Association Name="OrderLineEx_Order">
+        <End Type="isserver.dx.data.OrderLineEx" Role="OrderLineEx" Multiplicity="*" />
+        <End Type="isserver.dx.data.Order" Role="Order" Multiplicity="0..1" />
+      </Association>
+      <Association Name="OrderLineEx_OrderLine">
+        <End Type="isserver.dx.data.OrderLineEx" Role="OrderLineEx" Multiplicity="*" />
+        <End Type="isserver.dx.data.OrderLine" Role="OrderLine" Multiplicity="0..1" />
+      </Association>
+      <Association Name="OrderLine_Product">
+        <End Type="isserver.dx.data.Product" Role="Product" Multiplicity="0..1" />
+        <End Type="isserver.dx.data.OrderLine" Role="OrderLine" Multiplicity="*" />
+      </Association>
+      <Association Name="PackingEx_Packing">
+        <End Type="isserver.dx.data.PackingEx" Role="PackingEx" Multiplicity="*" />
+        <End Type="isserver.dx.data.Packing" Role="Packing" Multiplicity="0..1" />
+      </Association>
+      <Association Name="Packing_Product">
+        <End Type="isserver.dx.data.Product" Role="Product" Multiplicity="0..1" />
+        <End Type="isserver.dx.data.Packing" Role="Packing" Multiplicity="*" />
+      </Association>
+      <Association Name="PackingProduct_Product">
+        <End Type="isserver.dx.data.Product" Role="Product" Multiplicity="0..1" />
+        <End Type="isserver.dx.data.PackingProduct" Role="PackingProduct" Multiplicity="*" />
+      </Association>
+      <Association Name="PackingProduct_Packing">
+        <End Type="isserver.dx.data.PackingProduct" Role="PackingProduct" Multiplicity="*" />
+        <End Type="isserver.dx.data.Packing" Role="Packing" Multiplicity="0..1" />
+      </Association>
+      <Association Name="PackingIssueEx_PackingIssue">
+        <End Type="isserver.dx.data.PackingIssueEx" Role="PackingIssueEx" Multiplicity="*" />
+        <End Type="isserver.dx.data.PackingIssue" Role="PackingIssue" Multiplicity="0..1" />
+      </Association>
+      <Association Name="PackingRun_PackingRunErrors">
+        <End Type="isserver.dx.data.PackingRunError" Role="PackingRunErrors" Multiplicity="*" />
+        <End Type="isserver.dx.data.PackingRun" Role="PackingRun" Multiplicity="*" />
+      </Association>
+      <Association Name="PackingRun_BizLocation">
+        <End Type="isserver.dx.data.PackingRun" Role="PackingRun" Multiplicity="*" />
+        <End Type="isserver.dx.data.BizLocation" Role="BizLocation" Multiplicity="0..1" />
+      </Association>
+      <Association Name="PackingRun_Packing">
+        <End Type="isserver.dx.data.PackingRun" Role="PackingRun" Multiplicity="*" />
+        <End Type="isserver.dx.data.Packing" Role="Packing" Multiplicity="0..1" />
+      </Association>
+      <Association Name="PackingRun_ReadPoint">
+        <End Type="isserver.dx.data.ReadPoint" Role="ReadPoint" Multiplicity="0..1" />
+        <End Type="isserver.dx.data.PackingRun" Role="PackingRun" Multiplicity="*" />
+      </Association>
+    </Schema>
+    <Schema Namespace="ItemSightDataServiceHost" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <EntityContainer Name="ItemSightDataContext" m:IsDefaultEntityContainer="true">
+        <EntitySet Name="BizLocationInfos" EntityType="isserver.dx.data.BizLocationEx" />
+        <EntitySet Name="BizLocations" EntityType="isserver.dx.data.BizLocation" />
+        <EntitySet Name="ReadPointInfos" EntityType="isserver.dx.data.ReadPointEx" />
+        <EntitySet Name="ReadPoints" EntityType="isserver.dx.data.ReadPoint" />
+        <EntitySet Name="OrderInfos" EntityType="isserver.dx.data.OrderEx" />
+        <EntitySet Name="Orders" EntityType="isserver.dx.data.Order" />
+        <EntitySet Name="OrderLineInfos" EntityType="isserver.dx.data.OrderLineEx" />
+        <EntitySet Name="OrderLines" EntityType="isserver.dx.data.OrderLine" />
+        <EntitySet Name="PackingInfos" EntityType="isserver.dx.data.PackingEx" />
+        <EntitySet Name="Packings" EntityType="isserver.dx.data.Packing" />
+        <EntitySet Name="PackingProducts" EntityType="isserver.dx.data.PackingProduct" />
+        <EntitySet Name="Products" EntityType="isserver.dx.data.Product" />
+        <EntitySet Name="PackingErrors" EntityType="isserver.dx.data.PackingError" />
+        <EntitySet Name="PackingIssueInfos" EntityType="isserver.dx.data.PackingIssueEx" />
+        <EntitySet Name="PackingIssues" EntityType="isserver.dx.data.PackingIssue" />
+        <EntitySet Name="PackingHistoryErrorInfos" EntityType="isserver.dx.data.PackingHistoryErrorEx" />
+        <EntitySet Name="PackingRuns" EntityType="isserver.dx.data.PackingRun" />
+        <EntitySet Name="PackingRunErrors" EntityType="isserver.dx.data.PackingRunError" />
+        <EntitySet Name="BizEntities" EntityType="isserver.dx.data.BizEntity" />
+        <AssociationSet Name="BizLocationEx_BizLocation" Association="isserver.dx.data.BizLocationEx_BizLocation">
+          <End Role="BizLocationEx" EntitySet="BizLocationInfos" />
+          <End Role="BizLocation" EntitySet="BizLocations" />
+        </AssociationSet>
+        <AssociationSet Name="ReadPointEx_ReadPoint" Association="isserver.dx.data.ReadPointEx_ReadPoint">
+          <End Role="ReadPointEx" EntitySet="ReadPointInfos" />
+          <End Role="ReadPoint" EntitySet="ReadPoints" />
+        </AssociationSet>
+        <AssociationSet Name="OrderEx_Order" Association="isserver.dx.data.OrderEx_Order">
+          <End Role="OrderEx" EntitySet="OrderInfos" />
+          <End Role="Order" EntitySet="Orders" />
+        </AssociationSet>
+        <AssociationSet Name="OrderLineEx_Order" Association="isserver.dx.data.OrderLineEx_Order">
+          <End Role="OrderLineEx" EntitySet="OrderLineInfos" />
+          <End Role="Order" EntitySet="Orders" />
+        </AssociationSet>
+        <AssociationSet Name="OrderLineEx_OrderLine" Association="isserver.dx.data.OrderLineEx_OrderLine">
+          <End Role="OrderLineEx" EntitySet="OrderLineInfos" />
+          <End Role="OrderLine" EntitySet="OrderLines" />
+        </AssociationSet>
+        <AssociationSet Name="OrderLine_Product" Association="isserver.dx.data.OrderLine_Product">
+          <End Role="OrderLine" EntitySet="OrderLines" />
+          <End Role="Product" EntitySet="Products" />
+        </AssociationSet>
+        <AssociationSet Name="PackingEx_Packing" Association="isserver.dx.data.PackingEx_Packing">
+          <End Role="PackingEx" EntitySet="PackingInfos" />
+          <End Role="Packing" EntitySet="Packings" />
+        </AssociationSet>
+        <AssociationSet Name="Packing_Product" Association="isserver.dx.data.Packing_Product">
+          <End Role="Packing" EntitySet="Packings" />
+          <End Role="Product" EntitySet="Products" />
+        </AssociationSet>
+        <AssociationSet Name="PackingProduct_Product" Association="isserver.dx.data.PackingProduct_Product">
+          <End Role="PackingProduct" EntitySet="PackingProducts" />
+          <End Role="Product" EntitySet="Products" />
+        </AssociationSet>
+        <AssociationSet Name="PackingProduct_Packing" Association="isserver.dx.data.PackingProduct_Packing">
+          <End Role="PackingProduct" EntitySet="PackingProducts" />
+          <End Role="Packing" EntitySet="Packings" />
+        </AssociationSet>
+        <AssociationSet Name="PackingIssueEx_PackingIssue" Association="isserver.dx.data.PackingIssueEx_PackingIssue">
+          <End Role="PackingIssueEx" EntitySet="PackingIssueInfos" />
+          <End Role="PackingIssue" EntitySet="PackingIssues" />
+        </AssociationSet>
+        <AssociationSet Name="PackingRun_PackingRunErrors" Association="isserver.dx.data.PackingRun_PackingRunErrors">
+          <End Role="PackingRun" EntitySet="PackingRuns" />
+          <End Role="PackingRunErrors" EntitySet="PackingRunErrors" />
+        </AssociationSet>
+        <AssociationSet Name="PackingRun_BizLocation" Association="isserver.dx.data.PackingRun_BizLocation">
+          <End Role="PackingRun" EntitySet="PackingRuns" />
+          <End Role="BizLocation" EntitySet="BizLocations" />
+        </AssociationSet>
+        <AssociationSet Name="PackingRun_Packing" Association="isserver.dx.data.PackingRun_Packing">
+          <End Role="PackingRun" EntitySet="PackingRuns" />
+          <End Role="Packing" EntitySet="Packings" />
+        </AssociationSet>
+        <AssociationSet Name="PackingRun_ReadPoint" Association="isserver.dx.data.PackingRun_ReadPoint">
+          <End Role="PackingRun" EntitySet="PackingRuns" />
+          <End Role="ReadPoint" EntitySet="ReadPoints" />
+        </AssociationSet>
+      </EntityContainer>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>
