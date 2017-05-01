@@ -62,7 +62,6 @@
   <ItemGroup>
     <Compile Include="ItemSightDataClient.cs" />
     <Compile Include="ItemSightDataClientExtensions.cs" />
-    <Compile Include="PredicateBuilder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\ItemSightDataService\Reference.cs">
       <AutoGen>True</AutoGen>
