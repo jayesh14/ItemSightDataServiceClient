@@ -139,6 +139,7 @@
         <Property Name="OrderNumber" Type="Edm.String" />
         <Property Name="CustomerName" Type="Edm.String" />
         <Property Name="VendorName" Type="Edm.String" />
+        <Property Name="BizLocationTypeID" Type="Edm.Int32" Nullable="false" />
         <NavigationProperty Name="Packing" Relationship="isserver.dx.data.PackingEx_Packing" ToRole="Packing" FromRole="PackingEx" />
       </EntityType>
       <EntityType Name="Packing">

@@ -32,7 +32,7 @@ namespace ItemSightDataServiceClient {
             return _dataContext.BizLocationInfos.Expand(x => x.BizLocation).Where(x => x.BizLocation.BizLocationTypeID == 3);
         }
 
-        public IQueryable<BizLocationEx> GetDcLocations() {
+        public IQueryable<BizLocationEx> GetDistribCenterLocations() {
             return _dataContext.BizLocationInfos.Expand(x => x.BizLocation).Where(x => x.BizLocation.BizLocationTypeID == 4);
         }
 

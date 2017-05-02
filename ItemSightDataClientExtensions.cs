@@ -4,7 +4,19 @@ using ItemSightDataServiceClient.ItemSightDataService;
 
 namespace ItemSightDataServiceClient {
     public static class ItemSightDataClientExtensions {
-        public static IQueryable<PackingEx> WhereFactoryOrDcLocation(this IQueryable<PackingEx> cartons, int locationID) {
+        public static IQueryable<PackingEx> WhereCartonTagID(this IQueryable<PackingEx> cartons, string cartonID) {
+            return cartons.Where(ex => ex.Packing.TagID.Contains(cartonID));
+        }
+
+        public static IQueryable<PackingEx> WhereAnyFactory(this IQueryable<PackingEx> cartons) {
+            return cartons.Where(ex => ex.BizLocationTypeID == 3);
+        }
+
+        public static IQueryable<PackingEx> WhereAnyDistribCenter(this IQueryable<PackingEx> cartons) {
+            return cartons.Where(ex => ex.BizLocationTypeID == 4);
+        }
+
+        public static IQueryable<PackingEx> WhereFactoryOrDistribCenterLocation(this IQueryable<PackingEx> cartons, int locationID) {
             return cartons.Where(ex => ex.Packing.bizLocationID == locationID);
         }
 
