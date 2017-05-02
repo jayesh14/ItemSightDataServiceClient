@@ -23,8 +23,6 @@
         <Property Name="Description" Type="Edm.String" />
         <Property Name="BizLocationTypeID" Type="Edm.Int32" Nullable="false" />
         <Property Name="BizSubLocationTypeID" Type="Edm.Int32" Nullable="false" />
-        <Property Name="parentID" Type="Edm.Int32" />
-        <Property Name="rootID" Type="Edm.Int32" />
         <Property Name="AddressLine1" Type="Edm.String" />
         <Property Name="AddressLine2" Type="Edm.String" />
         <Property Name="City" Type="Edm.String" />
@@ -80,8 +78,6 @@
         <Property Name="OrderDate" Type="Edm.DateTime" />
         <Property Name="RequiredDate" Type="Edm.DateTime" />
         <Property Name="ownerID" Type="Edm.Int32" />
-        <Property Name="customerID" Type="Edm.Int32" />
-        <Property Name="vendorID" Type="Edm.Int32" />
       </EntityType>
       <EntityType Name="OrderLineEx">
         <Key>
@@ -107,10 +103,8 @@
         <Property Name="RequiredDate" Type="Edm.DateTime" />
         <Property Name="ShipTo" Type="Edm.String" />
         <Property Name="Vendor" Type="Edm.String" />
-        <Property Name="productID" Type="Edm.Int32" Nullable="false" />
         <Property Name="Qty" Type="Edm.Int32" Nullable="false" />
         <Property Name="QtyPerPack" Type="Edm.Int32" />
-        <Property Name="ownerID" Type="Edm.Int32" />
         <NavigationProperty Name="Product" Relationship="isserver.dx.data.OrderLine_Product" ToRole="Product" FromRole="OrderLine" />
       </EntityType>
       <EntityType Name="PackingEx">
@@ -156,9 +150,6 @@
         <Property Name="TagTypeID" Type="Edm.Int32" />
         <Property Name="Count" Type="Edm.Int32" Nullable="false" />
         <Property Name="InnerCount" Type="Edm.Int32" />
-        <Property Name="orderID" Type="Edm.Int64" />
-        <Property Name="orderLineID" Type="Edm.Int64" />
-        <Property Name="productID" Type="Edm.Int32" />
         <Property Name="EventStatusID" Type="Edm.Int32" />
         <Property Name="BizStepID" Type="Edm.Int32" />
         <Property Name="DispositionID" Type="Edm.Int32" />
@@ -215,7 +206,6 @@
         </Key>
         <Property Name="ID" Type="Edm.Int64" Nullable="false" />
         <Property Name="packingID" Type="Edm.Int64" Nullable="false" />
-        <Property Name="packingIssueTypeID" Type="Edm.Int32" Nullable="false" />
         <Property Name="TagID" Type="Edm.String" />
       </EntityType>
       <EntityType Name="PackingHistoryErrorEx">
@@ -233,10 +223,7 @@
           <PropertyRef Name="ID" />
         </Key>
         <Property Name="ID" Type="Edm.Int32" Nullable="false" />
-        <Property Name="packingID" Type="Edm.Int64" Nullable="false" />
         <Property Name="TimeStamp" Type="Edm.DateTime" Nullable="false" />
-        <Property Name="bizLocationID" Type="Edm.Int32" />
-        <Property Name="readPointID" Type="Edm.Int32" />
         <Property Name="InnerCount" Type="Edm.Int32" />
         <Property Name="EventStatusID" Type="Edm.Int32" />
         <Property Name="PackingRunItems" Type="Collection(isserver.dx.data.PackingRunItem)" Nullable="false" />
@@ -266,7 +253,6 @@
           <PropertyRef Name="ID" />
         </Key>
         <Property Name="ID" Type="Edm.Int64" Nullable="false" />
-        <Property Name="packingRunID" Type="Edm.Int32" Nullable="false" />
         <Property Name="TagID" Type="Edm.String" />
         <Property Name="PackingErrorTypeID" Type="Edm.Int32" Nullable="false" />
         <Property Name="Description" Type="Edm.String" />
