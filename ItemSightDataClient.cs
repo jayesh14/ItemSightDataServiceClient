@@ -57,10 +57,12 @@ namespace ItemSightDataServiceClient {
         }
 
         public IQueryable<PackingIssueEx> GetCartonIssues(int cartonID) {
-            return _dataContext.PackingIssueInfos.Where(x => x.PackingIssue.packingID == 121218);
+            return _dataContext.PackingIssueInfos.Where(x => x.PackingIssue.packingID == cartonID);
         }
 
         public IQueryable<PackingHistoryErrorEx> GetCartonErrorHistory(int cartonID) {
+            // TODO: isserver.dx.IDataProvider_Extensions.GetPackingHistoryErrorInfos(..) & isserver.dx.ServerDbDataProvider.GetPackingHistoryErrorInfos()
+            // EXAMPLE: return _dataContext.PackingHistoryErrorInfos.Where(ex => ex.PackingID = cartonID); // TODO: PackingHistoryErrorEx.PackingID
             throw new NotImplementedException();
         }
     }
