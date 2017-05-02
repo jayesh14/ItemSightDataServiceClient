@@ -223,9 +223,10 @@
           <PropertyRef Name="ID" />
         </Key>
         <Property Name="ID" Type="Edm.String" Nullable="false" />
-        <Property Name="TimeStamp" Type="Edm.DateTime" Nullable="false" />
-        <Property Name="TagID" Type="Edm.String" />
-        <Property Name="Description" Type="Edm.String" />
+        <Property Name="Description_" Type="Edm.String" />
+        <Property Name="TagID_" Type="Edm.String" />
+        <Property Name="TimeStamp_" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="PackingID" Type="Edm.Int64" Nullable="false" />
       </EntityType>
       <EntityType Name="PackingRun">
         <Key>

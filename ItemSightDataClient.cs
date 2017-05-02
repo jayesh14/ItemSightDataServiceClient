@@ -24,7 +24,7 @@ namespace ItemSightDataServiceClient {
             return _dataContext.OrderInfos.Expand(x => x.Order).Where(x => x.Order.ownerID == masterRepositoryId);
         }
 
-        public IQueryable<OrderLineEx> GetOrderLineItems(int orderID) {
+        public IQueryable<OrderLineEx> GetOrderLineItems(Int64 orderID) {
             return _dataContext.OrderLineInfos.Expand(x => x.OrderLine).Expand(x => x.OrderLine.Product).Where(x => x.OrderLine.orderID == orderID);
         }
 
@@ -44,26 +44,24 @@ namespace ItemSightDataServiceClient {
             return _dataContext.PackingInfos.Expand(x => x.Packing).Where(x => x.Packing.PackingTypeID == 2);
         }
 
-        public IQueryable<PackingProduct> GetCartonProducts(int cartonID) {
+        public IQueryable<PackingProduct> GetCartonProducts(Int64 cartonID) {
             return _dataContext.PackingProducts.Expand(x => x.Product).Where(x => x.Packing.ID == cartonID);
         }
 
-        public IQueryable<PackingEx> GetCartonEpcItems(int cartonID) {
+        public IQueryable<PackingEx> GetCartonEpcItems(Int64 cartonID) {
             return _dataContext.PackingInfos.Expand(x => x.Packing).Expand(x => x.Packing.Product).Where(x => x.Packing.parentID == cartonID);
         }
 
-        public IQueryable<PackingError> GetCartonErrors(int cartonID) {
+        public IQueryable<PackingError> GetCartonErrors(Int64 cartonID) {
             return _dataContext.PackingErrors.Where(x => x.packingID == cartonID);
         }
 
-        public IQueryable<PackingIssueEx> GetCartonIssues(int cartonID) {
+        public IQueryable<PackingIssueEx> GetCartonIssues(Int64 cartonID) {
             return _dataContext.PackingIssueInfos.Where(x => x.PackingIssue.packingID == cartonID);
         }
 
-        public IQueryable<PackingHistoryErrorEx> GetCartonErrorHistory(int cartonID) {
-            // TODO: isserver.dx.IDataProvider_Extensions.GetPackingHistoryErrorInfos(..) & isserver.dx.ServerDbDataProvider.GetPackingHistoryErrorInfos()
-            // EXAMPLE: return _dataContext.PackingHistoryErrorInfos.Where(ex => ex.PackingID = cartonID); // TODO: PackingHistoryErrorEx.PackingID
-            throw new NotImplementedException();
+        public IQueryable<PackingHistoryErrorEx> GetCartonErrorHistory(Int64 cartonID) {
+            return _dataContext.PackingHistoryErrorInfos.Where(ex => ex.PackingID == cartonID);
         }
     }
 }

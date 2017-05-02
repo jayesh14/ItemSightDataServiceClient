@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 
 // Original file name:
-// Generation date: 5/1/2017 9:29:22 PM
+// Generation date: 5/2/2017 4:57:05 PM
 namespace ItemSightDataServiceClient.ItemSightDataService
 {
     
@@ -672,148 +672,148 @@ namespace ItemSightDataServiceClient.ItemSightDataService
                 "TypeID\" Type=\"Edm.Int32\" Nullable=\"false\" /><Property Name=\"TagID\" Type=\"Edm.Str" +
                 "ing\" /></EntityType><EntityType Name=\"PackingHistoryErrorEx\"><Key><PropertyRef N" +
                 "ame=\"ID\" /></Key><Property Name=\"ID\" Type=\"Edm.String\" Nullable=\"false\" /><Prope" +
-                "rty Name=\"TimeStamp\" Type=\"Edm.DateTime\" Nullable=\"false\" /><Property Name=\"TagI" +
-                "D\" Type=\"Edm.String\" /><Property Name=\"Description\" Type=\"Edm.String\" /></Entity" +
-                "Type><EntityType Name=\"PackingRun\"><Key><PropertyRef Name=\"ID\" /></Key><Property" +
-                " Name=\"ID\" Type=\"Edm.Int32\" Nullable=\"false\" /><Property Name=\"packingID\" Type=\"" +
-                "Edm.Int64\" Nullable=\"false\" /><Property Name=\"TimeStamp\" Type=\"Edm.DateTime\" Nul" +
-                "lable=\"false\" /><Property Name=\"bizLocationID\" Type=\"Edm.Int32\" /><Property Name" +
-                "=\"readPointID\" Type=\"Edm.Int32\" /><Property Name=\"InnerCount\" Type=\"Edm.Int32\" /" +
-                "><Property Name=\"EventStatusID\" Type=\"Edm.Int32\" /><Property Name=\"PackingRunIte" +
-                "ms\" Type=\"Collection(isserver.dx.data.PackingRunItem)\" Nullable=\"false\" /><Prope" +
-                "rty Name=\"PackingRunExclusions\" Type=\"Collection(isserver.dx.data.PackingRunExcl" +
-                "usion)\" Nullable=\"false\" /><NavigationProperty Name=\"PackingRunErrors\" Relations" +
-                "hip=\"isserver.dx.data.PackingRun_PackingRunErrors\" ToRole=\"PackingRunErrors\" Fro" +
-                "mRole=\"PackingRun\" /><NavigationProperty Name=\"BizLocation\" Relationship=\"isserv" +
-                "er.dx.data.PackingRun_BizLocation\" ToRole=\"BizLocation\" FromRole=\"PackingRun\" />" +
-                "<NavigationProperty Name=\"Packing\" Relationship=\"isserver.dx.data.PackingRun_Pac" +
-                "king\" ToRole=\"Packing\" FromRole=\"PackingRun\" /><NavigationProperty Name=\"ReadPoi" +
-                "nt\" Relationship=\"isserver.dx.data.PackingRun_ReadPoint\" ToRole=\"ReadPoint\" From" +
-                "Role=\"PackingRun\" /></EntityType><ComplexType Name=\"PackingRunItem\"><Property Na" +
-                "me=\"ID\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property Name=\"packingRunID\" Type=\"" +
-                "Edm.Int32\" Nullable=\"false\" /><Property Name=\"TagID\" Type=\"Edm.String\" /><Proper" +
-                "ty Name=\"TagTypeID\" Type=\"Edm.Int32\" /><Property Name=\"Count\" Type=\"Edm.Int32\" N" +
-                "ullable=\"false\" /><Property Name=\"productID\" Type=\"Edm.Int32\" /></ComplexType><C" +
-                "omplexType Name=\"PackingRunExclusion\"><Property Name=\"ID\" Type=\"Edm.Int64\" Nulla" +
-                "ble=\"false\" /><Property Name=\"packingRunID\" Type=\"Edm.Int32\" Nullable=\"false\" />" +
-                "<Property Name=\"TagID\" Type=\"Edm.String\" /><Property Name=\"PackingErrorTypeID\" T" +
-                "ype=\"Edm.Int32\" Nullable=\"false\" /><Property Name=\"Description\" Type=\"Edm.String" +
-                "\" /></ComplexType><EntityType Name=\"PackingRunError\"><Key><PropertyRef Name=\"ID\"" +
-                " /></Key><Property Name=\"ID\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property Name=" +
-                "\"packingRunID\" Type=\"Edm.Int32\" Nullable=\"false\" /><Property Name=\"TagID\" Type=\"" +
-                "Edm.String\" /><Property Name=\"PackingErrorTypeID\" Type=\"Edm.Int32\" Nullable=\"fal" +
-                "se\" /><Property Name=\"Description\" Type=\"Edm.String\" /></EntityType><EntityType " +
-                "Name=\"BizEntity\"><Key><PropertyRef Name=\"ID\" /></Key><Property Name=\"ID\" Type=\"E" +
-                "dm.Int32\" Nullable=\"false\" /><Property Name=\"CodeName\" Type=\"Edm.String\" /><Prop" +
-                "erty Name=\"Name\" Type=\"Edm.String\" /><Property Name=\"Description\" Type=\"Edm.Stri" +
-                "ng\" /><Property Name=\"AddressLine1\" Type=\"Edm.String\" /><Property Name=\"AddressL" +
-                "ine2\" Type=\"Edm.String\" /><Property Name=\"City\" Type=\"Edm.String\" /><Property Na" +
-                "me=\"StateProvinceRegion\" Type=\"Edm.String\" /><Property Name=\"ZIPPostalCode\" Type" +
-                "=\"Edm.String\" /><Property Name=\"Country\" Type=\"Edm.String\" /><Property Name=\"Con" +
-                "tactName\" Type=\"Edm.String\" /><Property Name=\"ContactEmail\" Type=\"Edm.String\" />" +
-                "<Property Name=\"ContactPhone\" Type=\"Edm.String\" /></EntityType><Association Name" +
-                "=\"BizLocationEx_BizLocation\"><End Type=\"isserver.dx.data.BizLocationEx\" Role=\"Bi" +
-                "zLocationEx\" Multiplicity=\"*\" /><End Type=\"isserver.dx.data.BizLocation\" Role=\"B" +
-                "izLocation\" Multiplicity=\"0..1\" /></Association><Association Name=\"ReadPointEx_R" +
-                "eadPoint\"><End Type=\"isserver.dx.data.ReadPointEx\" Role=\"ReadPointEx\" Multiplici" +
-                "ty=\"*\" /><End Type=\"isserver.dx.data.ReadPoint\" Role=\"ReadPoint\" Multiplicity=\"0" +
-                "..1\" /></Association><Association Name=\"OrderEx_Order\"><End Type=\"isserver.dx.da" +
-                "ta.OrderEx\" Role=\"OrderEx\" Multiplicity=\"*\" /><End Type=\"isserver.dx.data.Order\"" +
-                " Role=\"Order\" Multiplicity=\"0..1\" /></Association><Association Name=\"OrderLineEx" +
-                "_Order\"><End Type=\"isserver.dx.data.OrderLineEx\" Role=\"OrderLineEx\" Multiplicity" +
-                "=\"*\" /><End Type=\"isserver.dx.data.Order\" Role=\"Order\" Multiplicity=\"0..1\" /></A" +
-                "ssociation><Association Name=\"OrderLineEx_OrderLine\"><End Type=\"isserver.dx.data" +
-                ".OrderLineEx\" Role=\"OrderLineEx\" Multiplicity=\"*\" /><End Type=\"isserver.dx.data." +
-                "OrderLine\" Role=\"OrderLine\" Multiplicity=\"0..1\" /></Association><Association Nam" +
-                "e=\"OrderLine_Product\"><End Type=\"isserver.dx.data.Product\" Role=\"Product\" Multip" +
-                "licity=\"0..1\" /><End Type=\"isserver.dx.data.OrderLine\" Role=\"OrderLine\" Multipli" +
-                "city=\"*\" /></Association><Association Name=\"PackingEx_Packing\"><End Type=\"isserv" +
-                "er.dx.data.PackingEx\" Role=\"PackingEx\" Multiplicity=\"*\" /><End Type=\"isserver.dx" +
-                ".data.Packing\" Role=\"Packing\" Multiplicity=\"0..1\" /></Assoc";
+                "rty Name=\"Description_\" Type=\"Edm.String\" /><Property Name=\"TagID_\" Type=\"Edm.St" +
+                "ring\" /><Property Name=\"TimeStamp_\" Type=\"Edm.DateTime\" Nullable=\"false\" /><Prop" +
+                "erty Name=\"PackingID\" Type=\"Edm.Int64\" Nullable=\"false\" /></EntityType><EntityTy" +
+                "pe Name=\"PackingRun\"><Key><PropertyRef Name=\"ID\" /></Key><Property Name=\"ID\" Typ" +
+                "e=\"Edm.Int32\" Nullable=\"false\" /><Property Name=\"packingID\" Type=\"Edm.Int64\" Nul" +
+                "lable=\"false\" /><Property Name=\"TimeStamp\" Type=\"Edm.DateTime\" Nullable=\"false\" " +
+                "/><Property Name=\"bizLocationID\" Type=\"Edm.Int32\" /><Property Name=\"readPointID\"" +
+                " Type=\"Edm.Int32\" /><Property Name=\"InnerCount\" Type=\"Edm.Int32\" /><Property Nam" +
+                "e=\"EventStatusID\" Type=\"Edm.Int32\" /><Property Name=\"PackingRunItems\" Type=\"Coll" +
+                "ection(isserver.dx.data.PackingRunItem)\" Nullable=\"false\" /><Property Name=\"Pack" +
+                "ingRunExclusions\" Type=\"Collection(isserver.dx.data.PackingRunExclusion)\" Nullab" +
+                "le=\"false\" /><NavigationProperty Name=\"PackingRunErrors\" Relationship=\"isserver." +
+                "dx.data.PackingRun_PackingRunErrors\" ToRole=\"PackingRunErrors\" FromRole=\"Packing" +
+                "Run\" /><NavigationProperty Name=\"BizLocation\" Relationship=\"isserver.dx.data.Pac" +
+                "kingRun_BizLocation\" ToRole=\"BizLocation\" FromRole=\"PackingRun\" /><NavigationPro" +
+                "perty Name=\"Packing\" Relationship=\"isserver.dx.data.PackingRun_Packing\" ToRole=\"" +
+                "Packing\" FromRole=\"PackingRun\" /><NavigationProperty Name=\"ReadPoint\" Relationsh" +
+                "ip=\"isserver.dx.data.PackingRun_ReadPoint\" ToRole=\"ReadPoint\" FromRole=\"PackingR" +
+                "un\" /></EntityType><ComplexType Name=\"PackingRunItem\"><Property Name=\"ID\" Type=\"" +
+                "Edm.Int64\" Nullable=\"false\" /><Property Name=\"packingRunID\" Type=\"Edm.Int32\" Nul" +
+                "lable=\"false\" /><Property Name=\"TagID\" Type=\"Edm.String\" /><Property Name=\"TagTy" +
+                "peID\" Type=\"Edm.Int32\" /><Property Name=\"Count\" Type=\"Edm.Int32\" Nullable=\"false" +
+                "\" /><Property Name=\"productID\" Type=\"Edm.Int32\" /></ComplexType><ComplexType Nam" +
+                "e=\"PackingRunExclusion\"><Property Name=\"ID\" Type=\"Edm.Int64\" Nullable=\"false\" />" +
+                "<Property Name=\"packingRunID\" Type=\"Edm.Int32\" Nullable=\"false\" /><Property Name" +
+                "=\"TagID\" Type=\"Edm.String\" /><Property Name=\"PackingErrorTypeID\" Type=\"Edm.Int32" +
+                "\" Nullable=\"false\" /><Property Name=\"Description\" Type=\"Edm.String\" /></ComplexT" +
+                "ype><EntityType Name=\"PackingRunError\"><Key><PropertyRef Name=\"ID\" /></Key><Prop" +
+                "erty Name=\"ID\" Type=\"Edm.Int64\" Nullable=\"false\" /><Property Name=\"packingRunID\"" +
+                " Type=\"Edm.Int32\" Nullable=\"false\" /><Property Name=\"TagID\" Type=\"Edm.String\" />" +
+                "<Property Name=\"PackingErrorTypeID\" Type=\"Edm.Int32\" Nullable=\"false\" /><Propert" +
+                "y Name=\"Description\" Type=\"Edm.String\" /></EntityType><EntityType Name=\"BizEntit" +
+                "y\"><Key><PropertyRef Name=\"ID\" /></Key><Property Name=\"ID\" Type=\"Edm.Int32\" Null" +
+                "able=\"false\" /><Property Name=\"CodeName\" Type=\"Edm.String\" /><Property Name=\"Nam" +
+                "e\" Type=\"Edm.String\" /><Property Name=\"Description\" Type=\"Edm.String\" /><Propert" +
+                "y Name=\"AddressLine1\" Type=\"Edm.String\" /><Property Name=\"AddressLine2\" Type=\"Ed" +
+                "m.String\" /><Property Name=\"City\" Type=\"Edm.String\" /><Property Name=\"StateProvi" +
+                "nceRegion\" Type=\"Edm.String\" /><Property Name=\"ZIPPostalCode\" Type=\"Edm.String\" " +
+                "/><Property Name=\"Country\" Type=\"Edm.String\" /><Property Name=\"ContactName\" Type" +
+                "=\"Edm.String\" /><Property Name=\"ContactEmail\" Type=\"Edm.String\" /><Property Name" +
+                "=\"ContactPhone\" Type=\"Edm.String\" /></EntityType><Association Name=\"BizLocationE" +
+                "x_BizLocation\"><End Type=\"isserver.dx.data.BizLocationEx\" Role=\"BizLocationEx\" M" +
+                "ultiplicity=\"*\" /><End Type=\"isserver.dx.data.BizLocation\" Role=\"BizLocation\" Mu" +
+                "ltiplicity=\"0..1\" /></Association><Association Name=\"ReadPointEx_ReadPoint\"><End" +
+                " Type=\"isserver.dx.data.ReadPointEx\" Role=\"ReadPointEx\" Multiplicity=\"*\" /><End " +
+                "Type=\"isserver.dx.data.ReadPoint\" Role=\"ReadPoint\" Multiplicity=\"0..1\" /></Assoc" +
+                "iation><Association Name=\"OrderEx_Order\"><End Type=\"isserver.dx.data.OrderEx\" Ro" +
+                "le=\"OrderEx\" Multiplicity=\"*\" /><End Type=\"isserver.dx.data.Order\" Role=\"Order\" " +
+                "Multiplicity=\"0..1\" /></Association><Association Name=\"OrderLineEx_Order\"><End T" +
+                "ype=\"isserver.dx.data.OrderLineEx\" Role=\"OrderLineEx\" Multiplicity=\"*\" /><End Ty" +
+                "pe=\"isserver.dx.data.Order\" Role=\"Order\" Multiplicity=\"0..1\" /></Association><As" +
+                "sociation Name=\"OrderLineEx_OrderLine\"><End Type=\"isserver.dx.data.OrderLineEx\" " +
+                "Role=\"OrderLineEx\" Multiplicity=\"*\" /><End Type=\"isserver.dx.data.OrderLine\" Rol" +
+                "e=\"OrderLine\" Multiplicity=\"0..1\" /></Association><Association Name=\"OrderLine_P" +
+                "roduct\"><End Type=\"isserver.dx.data.Product\" Role=\"Product\" Multiplicity=\"0..1\" " +
+                "/><End Type=\"isserver.dx.data.OrderLine\" Role=\"OrderLine\" Multiplicity=\"*\" /></A" +
+                "ssociation><Association Name=\"PackingEx_Packing\"><End Type=\"isserver.dx.data.Pac" +
+                "kingEx\" Role=\"PackingEx\" Multiplicity=\"*\" /><End Type=\"isse";
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-            private const string ModelPart2 = "iation><Association Name=\"Packing_Product\"><End Type=\"isserver.dx.data.Product\" R" +
-                "ole=\"Product\" Multiplicity=\"0..1\" /><End Type=\"isserver.dx.data.Packing\" Role=\"P" +
-                "acking\" Multiplicity=\"*\" /></Association><Association Name=\"PackingProduct_Produ" +
-                "ct\"><End Type=\"isserver.dx.data.Product\" Role=\"Product\" Multiplicity=\"0..1\" /><E" +
-                "nd Type=\"isserver.dx.data.PackingProduct\" Role=\"PackingProduct\" Multiplicity=\"*\"" +
-                " /></Association><Association Name=\"PackingProduct_Packing\"><End Type=\"isserver." +
-                "dx.data.PackingProduct\" Role=\"PackingProduct\" Multiplicity=\"*\" /><End Type=\"isse" +
-                "rver.dx.data.Packing\" Role=\"Packing\" Multiplicity=\"0..1\" /></Association><Associ" +
-                "ation Name=\"PackingIssueEx_PackingIssue\"><End Type=\"isserver.dx.data.PackingIssu" +
-                "eEx\" Role=\"PackingIssueEx\" Multiplicity=\"*\" /><End Type=\"isserver.dx.data.Packin" +
-                "gIssue\" Role=\"PackingIssue\" Multiplicity=\"0..1\" /></Association><Association Nam" +
-                "e=\"PackingRun_PackingRunErrors\"><End Type=\"isserver.dx.data.PackingRunError\" Rol" +
-                "e=\"PackingRunErrors\" Multiplicity=\"*\" /><End Type=\"isserver.dx.data.PackingRun\" " +
-                "Role=\"PackingRun\" Multiplicity=\"*\" /></Association><Association Name=\"PackingRun" +
-                "_BizLocation\"><End Type=\"isserver.dx.data.PackingRun\" Role=\"PackingRun\" Multipli" +
-                "city=\"*\" /><End Type=\"isserver.dx.data.BizLocation\" Role=\"BizLocation\" Multiplic" +
-                "ity=\"0..1\" /></Association><Association Name=\"PackingRun_Packing\"><End Type=\"iss" +
-                "erver.dx.data.PackingRun\" Role=\"PackingRun\" Multiplicity=\"*\" /><End Type=\"isserv" +
-                "er.dx.data.Packing\" Role=\"Packing\" Multiplicity=\"0..1\" /></Association><Associat" +
-                "ion Name=\"PackingRun_ReadPoint\"><End Type=\"isserver.dx.data.ReadPoint\" Role=\"Rea" +
-                "dPoint\" Multiplicity=\"0..1\" /><End Type=\"isserver.dx.data.PackingRun\" Role=\"Pack" +
-                "ingRun\" Multiplicity=\"*\" /></Association></Schema><Schema Namespace=\"ItemSightDa" +
-                "taServiceHost\" xmlns=\"http://schemas.microsoft.com/ado/2009/11/edm\"><EntityConta" +
-                "iner Name=\"ItemSightDataContext\" m:IsDefaultEntityContainer=\"true\"><EntitySet Na" +
-                "me=\"BizLocationInfos\" EntityType=\"isserver.dx.data.BizLocationEx\" /><EntitySet N" +
-                "ame=\"BizLocations\" EntityType=\"isserver.dx.data.BizLocation\" /><EntitySet Name=\"" +
-                "ReadPointInfos\" EntityType=\"isserver.dx.data.ReadPointEx\" /><EntitySet Name=\"Rea" +
-                "dPoints\" EntityType=\"isserver.dx.data.ReadPoint\" /><EntitySet Name=\"OrderInfos\" " +
-                "EntityType=\"isserver.dx.data.OrderEx\" /><EntitySet Name=\"Orders\" EntityType=\"iss" +
-                "erver.dx.data.Order\" /><EntitySet Name=\"OrderLineInfos\" EntityType=\"isserver.dx." +
-                "data.OrderLineEx\" /><EntitySet Name=\"OrderLines\" EntityType=\"isserver.dx.data.Or" +
-                "derLine\" /><EntitySet Name=\"PackingInfos\" EntityType=\"isserver.dx.data.PackingEx" +
-                "\" /><EntitySet Name=\"Packings\" EntityType=\"isserver.dx.data.Packing\" /><EntitySe" +
-                "t Name=\"PackingProducts\" EntityType=\"isserver.dx.data.PackingProduct\" /><EntityS" +
-                "et Name=\"Products\" EntityType=\"isserver.dx.data.Product\" /><EntitySet Name=\"Pack" +
-                "ingErrors\" EntityType=\"isserver.dx.data.PackingError\" /><EntitySet Name=\"Packing" +
-                "IssueInfos\" EntityType=\"isserver.dx.data.PackingIssueEx\" /><EntitySet Name=\"Pack" +
-                "ingIssues\" EntityType=\"isserver.dx.data.PackingIssue\" /><EntitySet Name=\"Packing" +
-                "HistoryErrorInfos\" EntityType=\"isserver.dx.data.PackingHistoryErrorEx\" /><Entity" +
-                "Set Name=\"PackingRuns\" EntityType=\"isserver.dx.data.PackingRun\" /><EntitySet Nam" +
-                "e=\"PackingRunErrors\" EntityType=\"isserver.dx.data.PackingRunError\" /><EntitySet " +
-                "Name=\"BizEntities\" EntityType=\"isserver.dx.data.BizEntity\" /><AssociationSet Nam" +
-                "e=\"BizLocationEx_BizLocation\" Association=\"isserver.dx.data.BizLocationEx_BizLoc" +
-                "ation\"><End Role=\"BizLocationEx\" EntitySet=\"BizLocationInfos\" /><End Role=\"BizLo" +
-                "cation\" EntitySet=\"BizLocations\" /></AssociationSet><AssociationSet Name=\"ReadPo" +
-                "intEx_ReadPoint\" Association=\"isserver.dx.data.ReadPointEx_ReadPoint\"><End Role=" +
-                "\"ReadPointEx\" EntitySet=\"ReadPointInfos\" /><End Role=\"ReadPoint\" EntitySet=\"Read" +
-                "Points\" /></AssociationSet><AssociationSet Name=\"OrderEx_Order\" Association=\"iss" +
-                "erver.dx.data.OrderEx_Order\"><End Role=\"OrderEx\" EntitySet=\"OrderInfos\" /><End R" +
-                "ole=\"Order\" EntitySet=\"Orders\" /></AssociationSet><AssociationSet Name=\"OrderLin" +
-                "eEx_Order\" Association=\"isserver.dx.data.OrderLineEx_Order\"><End Role=\"OrderLine" +
-                "Ex\" EntitySet=\"OrderLineInfos\" /><End Role=\"Order\" EntitySet=\"Orders\" /></Associ" +
-                "ationSet><AssociationSet Name=\"OrderLineEx_OrderLine\" Association=\"isserver.dx.d" +
-                "ata.OrderLineEx_OrderLine\"><End Role=\"OrderLineEx\" EntitySet=\"OrderLineInfos\" />" +
-                "<End Role=\"OrderLine\" EntitySet=\"OrderLines\" /></AssociationSet><AssociationSet " +
-                "Name=\"OrderLine_Product\" Association=\"isserver.dx.data.OrderLine_Product\"><End R" +
-                "ole=\"OrderLine\" EntitySet=\"OrderLines\" /><End Role=\"Product\" EntitySet=\"Products" +
-                "\" /></AssociationSet><AssociationSet Name=\"PackingEx_Packing\" Association=\"isser" +
-                "ver.dx.data.PackingEx_Packing\"><End Role=\"PackingEx\" EntitySet=\"PackingInfos\" />" +
-                "<End Role=\"Packing\" EntitySet=\"Packings\" /></AssociationSet><AssociationSet Name" +
-                "=\"Packing_Product\" Association=\"isserver.dx.data.Packing_Product\"><End Role=\"Pac" +
-                "king\" EntitySet=\"Packings\" /><End Role=\"Product\" EntitySet=\"Products\" /></Associ" +
-                "ationSet><AssociationSet Name=\"PackingProduct_Product\" Association=\"isserver.dx." +
-                "data.PackingProduct_Product\"><End Role=\"PackingProduct\" EntitySet=\"PackingProduc" +
-                "ts\" /><End Role=\"Product\" EntitySet=\"Products\" /></AssociationSet><AssociationSe" +
-                "t Name=\"PackingProduct_Packing\" Association=\"isserver.dx.data.PackingProduct_Pac" +
-                "king\"><End Role=\"PackingProduct\" EntitySet=\"PackingProducts\" /><End Role=\"Packin" +
-                "g\" EntitySet=\"Packings\" /></AssociationSet><AssociationSet Name=\"PackingIssueEx_" +
-                "PackingIssue\" Association=\"isserver.dx.data.PackingIssueEx_PackingIssue\"><End Ro" +
-                "le=\"PackingIssueEx\" EntitySet=\"PackingIssueInfos\" /><End Role=\"PackingIssue\" Ent" +
-                "itySet=\"PackingIssues\" /></AssociationSet><AssociationSet Name=\"PackingRun_Packi" +
-                "ngRunErrors\" Association=\"isserver.dx.data.PackingRun_PackingRunErrors\"><End Rol" +
-                "e=\"PackingRun\" EntitySet=\"PackingRuns\" /><End Role=\"PackingRunErrors\" EntitySet=" +
-                "\"PackingRunErrors\" /></AssociationSet><AssociationSet Name=\"PackingRun_BizLocati" +
-                "on\" Association=\"isserver.dx.data.PackingRun_BizLocation\"><End Role=\"PackingRun\"" +
-                " EntitySet=\"PackingRuns\" /><End Role=\"BizLocation\" EntitySet=\"BizLocations\" /></" +
-                "AssociationSet><AssociationSet Name=\"PackingRun_Packing\" Association=\"isserver.d" +
-                "x.data.PackingRun_Packing\"><End Role=\"PackingRun\" EntitySet=\"PackingRuns\" /><End" +
-                " Role=\"Packing\" EntitySet=\"Packings\" /></AssociationSet><AssociationSet Name=\"Pa" +
-                "ckingRun_ReadPoint\" Association=\"isserver.dx.data.PackingRun_ReadPoint\"><End Rol" +
-                "e=\"PackingRun\" EntitySet=\"PackingRuns\" /><End Role=\"ReadPoint\" EntitySet=\"ReadPo" +
-                "ints\" /></AssociationSet></EntityContainer></Schema></edmx:DataServices></edmx:E" +
-                "dmx>";
+            private const string ModelPart2 = "rver.dx.data.Packing\" Role=\"Packing\" Multiplicity=\"0..1\" /></Association><Associa" +
+                "tion Name=\"Packing_Product\"><End Type=\"isserver.dx.data.Product\" Role=\"Product\" " +
+                "Multiplicity=\"0..1\" /><End Type=\"isserver.dx.data.Packing\" Role=\"Packing\" Multip" +
+                "licity=\"*\" /></Association><Association Name=\"PackingProduct_Product\"><End Type=" +
+                "\"isserver.dx.data.Product\" Role=\"Product\" Multiplicity=\"0..1\" /><End Type=\"isser" +
+                "ver.dx.data.PackingProduct\" Role=\"PackingProduct\" Multiplicity=\"*\" /></Associati" +
+                "on><Association Name=\"PackingProduct_Packing\"><End Type=\"isserver.dx.data.Packin" +
+                "gProduct\" Role=\"PackingProduct\" Multiplicity=\"*\" /><End Type=\"isserver.dx.data.P" +
+                "acking\" Role=\"Packing\" Multiplicity=\"0..1\" /></Association><Association Name=\"Pa" +
+                "ckingIssueEx_PackingIssue\"><End Type=\"isserver.dx.data.PackingIssueEx\" Role=\"Pac" +
+                "kingIssueEx\" Multiplicity=\"*\" /><End Type=\"isserver.dx.data.PackingIssue\" Role=\"" +
+                "PackingIssue\" Multiplicity=\"0..1\" /></Association><Association Name=\"PackingRun_" +
+                "PackingRunErrors\"><End Type=\"isserver.dx.data.PackingRunError\" Role=\"PackingRunE" +
+                "rrors\" Multiplicity=\"*\" /><End Type=\"isserver.dx.data.PackingRun\" Role=\"PackingR" +
+                "un\" Multiplicity=\"*\" /></Association><Association Name=\"PackingRun_BizLocation\">" +
+                "<End Type=\"isserver.dx.data.PackingRun\" Role=\"PackingRun\" Multiplicity=\"*\" /><En" +
+                "d Type=\"isserver.dx.data.BizLocation\" Role=\"BizLocation\" Multiplicity=\"0..1\" /><" +
+                "/Association><Association Name=\"PackingRun_Packing\"><End Type=\"isserver.dx.data." +
+                "PackingRun\" Role=\"PackingRun\" Multiplicity=\"*\" /><End Type=\"isserver.dx.data.Pac" +
+                "king\" Role=\"Packing\" Multiplicity=\"0..1\" /></Association><Association Name=\"Pack" +
+                "ingRun_ReadPoint\"><End Type=\"isserver.dx.data.ReadPoint\" Role=\"ReadPoint\" Multip" +
+                "licity=\"0..1\" /><End Type=\"isserver.dx.data.PackingRun\" Role=\"PackingRun\" Multip" +
+                "licity=\"*\" /></Association></Schema><Schema Namespace=\"ItemSightDataServiceHost\"" +
+                " xmlns=\"http://schemas.microsoft.com/ado/2009/11/edm\"><EntityContainer Name=\"Ite" +
+                "mSightDataContext\" m:IsDefaultEntityContainer=\"true\"><EntitySet Name=\"BizLocatio" +
+                "nInfos\" EntityType=\"isserver.dx.data.BizLocationEx\" /><EntitySet Name=\"BizLocati" +
+                "ons\" EntityType=\"isserver.dx.data.BizLocation\" /><EntitySet Name=\"ReadPointInfos" +
+                "\" EntityType=\"isserver.dx.data.ReadPointEx\" /><EntitySet Name=\"ReadPoints\" Entit" +
+                "yType=\"isserver.dx.data.ReadPoint\" /><EntitySet Name=\"OrderInfos\" EntityType=\"is" +
+                "server.dx.data.OrderEx\" /><EntitySet Name=\"Orders\" EntityType=\"isserver.dx.data." +
+                "Order\" /><EntitySet Name=\"OrderLineInfos\" EntityType=\"isserver.dx.data.OrderLine" +
+                "Ex\" /><EntitySet Name=\"OrderLines\" EntityType=\"isserver.dx.data.OrderLine\" /><En" +
+                "titySet Name=\"PackingInfos\" EntityType=\"isserver.dx.data.PackingEx\" /><EntitySet" +
+                " Name=\"Packings\" EntityType=\"isserver.dx.data.Packing\" /><EntitySet Name=\"Packin" +
+                "gProducts\" EntityType=\"isserver.dx.data.PackingProduct\" /><EntitySet Name=\"Produ" +
+                "cts\" EntityType=\"isserver.dx.data.Product\" /><EntitySet Name=\"PackingErrors\" Ent" +
+                "ityType=\"isserver.dx.data.PackingError\" /><EntitySet Name=\"PackingIssueInfos\" En" +
+                "tityType=\"isserver.dx.data.PackingIssueEx\" /><EntitySet Name=\"PackingIssues\" Ent" +
+                "ityType=\"isserver.dx.data.PackingIssue\" /><EntitySet Name=\"PackingHistoryErrorIn" +
+                "fos\" EntityType=\"isserver.dx.data.PackingHistoryErrorEx\" /><EntitySet Name=\"Pack" +
+                "ingRuns\" EntityType=\"isserver.dx.data.PackingRun\" /><EntitySet Name=\"PackingRunE" +
+                "rrors\" EntityType=\"isserver.dx.data.PackingRunError\" /><EntitySet Name=\"BizEntit" +
+                "ies\" EntityType=\"isserver.dx.data.BizEntity\" /><AssociationSet Name=\"BizLocation" +
+                "Ex_BizLocation\" Association=\"isserver.dx.data.BizLocationEx_BizLocation\"><End Ro" +
+                "le=\"BizLocationEx\" EntitySet=\"BizLocationInfos\" /><End Role=\"BizLocation\" Entity" +
+                "Set=\"BizLocations\" /></AssociationSet><AssociationSet Name=\"ReadPointEx_ReadPoin" +
+                "t\" Association=\"isserver.dx.data.ReadPointEx_ReadPoint\"><End Role=\"ReadPointEx\" " +
+                "EntitySet=\"ReadPointInfos\" /><End Role=\"ReadPoint\" EntitySet=\"ReadPoints\" /></As" +
+                "sociationSet><AssociationSet Name=\"OrderEx_Order\" Association=\"isserver.dx.data." +
+                "OrderEx_Order\"><End Role=\"OrderEx\" EntitySet=\"OrderInfos\" /><End Role=\"Order\" En" +
+                "titySet=\"Orders\" /></AssociationSet><AssociationSet Name=\"OrderLineEx_Order\" Ass" +
+                "ociation=\"isserver.dx.data.OrderLineEx_Order\"><End Role=\"OrderLineEx\" EntitySet=" +
+                "\"OrderLineInfos\" /><End Role=\"Order\" EntitySet=\"Orders\" /></AssociationSet><Asso" +
+                "ciationSet Name=\"OrderLineEx_OrderLine\" Association=\"isserver.dx.data.OrderLineE" +
+                "x_OrderLine\"><End Role=\"OrderLineEx\" EntitySet=\"OrderLineInfos\" /><End Role=\"Ord" +
+                "erLine\" EntitySet=\"OrderLines\" /></AssociationSet><AssociationSet Name=\"OrderLin" +
+                "e_Product\" Association=\"isserver.dx.data.OrderLine_Product\"><End Role=\"OrderLine" +
+                "\" EntitySet=\"OrderLines\" /><End Role=\"Product\" EntitySet=\"Products\" /></Associat" +
+                "ionSet><AssociationSet Name=\"PackingEx_Packing\" Association=\"isserver.dx.data.Pa" +
+                "ckingEx_Packing\"><End Role=\"PackingEx\" EntitySet=\"PackingInfos\" /><End Role=\"Pac" +
+                "king\" EntitySet=\"Packings\" /></AssociationSet><AssociationSet Name=\"Packing_Prod" +
+                "uct\" Association=\"isserver.dx.data.Packing_Product\"><End Role=\"Packing\" EntitySe" +
+                "t=\"Packings\" /><End Role=\"Product\" EntitySet=\"Products\" /></AssociationSet><Asso" +
+                "ciationSet Name=\"PackingProduct_Product\" Association=\"isserver.dx.data.PackingPr" +
+                "oduct_Product\"><End Role=\"PackingProduct\" EntitySet=\"PackingProducts\" /><End Rol" +
+                "e=\"Product\" EntitySet=\"Products\" /></AssociationSet><AssociationSet Name=\"Packin" +
+                "gProduct_Packing\" Association=\"isserver.dx.data.PackingProduct_Packing\"><End Rol" +
+                "e=\"PackingProduct\" EntitySet=\"PackingProducts\" /><End Role=\"Packing\" EntitySet=\"" +
+                "Packings\" /></AssociationSet><AssociationSet Name=\"PackingIssueEx_PackingIssue\" " +
+                "Association=\"isserver.dx.data.PackingIssueEx_PackingIssue\"><End Role=\"PackingIss" +
+                "ueEx\" EntitySet=\"PackingIssueInfos\" /><End Role=\"PackingIssue\" EntitySet=\"Packin" +
+                "gIssues\" /></AssociationSet><AssociationSet Name=\"PackingRun_PackingRunErrors\" A" +
+                "ssociation=\"isserver.dx.data.PackingRun_PackingRunErrors\"><End Role=\"PackingRun\"" +
+                " EntitySet=\"PackingRuns\" /><End Role=\"PackingRunErrors\" EntitySet=\"PackingRunErr" +
+                "ors\" /></AssociationSet><AssociationSet Name=\"PackingRun_BizLocation\" Associatio" +
+                "n=\"isserver.dx.data.PackingRun_BizLocation\"><End Role=\"PackingRun\" EntitySet=\"Pa" +
+                "ckingRuns\" /><End Role=\"BizLocation\" EntitySet=\"BizLocations\" /></AssociationSet" +
+                "><AssociationSet Name=\"PackingRun_Packing\" Association=\"isserver.dx.data.Packing" +
+                "Run_Packing\"><End Role=\"PackingRun\" EntitySet=\"PackingRuns\" /><End Role=\"Packing" +
+                "\" EntitySet=\"Packings\" /></AssociationSet><AssociationSet Name=\"PackingRun_ReadP" +
+                "oint\" Association=\"isserver.dx.data.PackingRun_ReadPoint\"><End Role=\"PackingRun\"" +
+                " EntitySet=\"PackingRuns\" /><End Role=\"ReadPoint\" EntitySet=\"ReadPoints\" /></Asso" +
+                "ciationSet></EntityContainer></Schema></edmx:DataServices></edmx:Edmx>";
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
             private static string GetConcatenatedEdmxString()
             {
@@ -4517,13 +4517,15 @@ namespace ItemSightDataServiceClient.ItemSightDataService
         /// Create a new PackingHistoryErrorEx object.
         /// </summary>
         /// <param name="ID">Initial value of ID.</param>
-        /// <param name="timeStamp">Initial value of TimeStamp.</param>
+        /// <param name="timeStamp_">Initial value of TimeStamp_.</param>
+        /// <param name="packingID">Initial value of PackingID.</param>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public static PackingHistoryErrorEx CreatePackingHistoryErrorEx(string ID, global::System.DateTime timeStamp)
+        public static PackingHistoryErrorEx CreatePackingHistoryErrorEx(string ID, global::System.DateTime timeStamp_, long packingID)
         {
             PackingHistoryErrorEx packingHistoryErrorEx = new PackingHistoryErrorEx();
             packingHistoryErrorEx.ID = ID;
-            packingHistoryErrorEx.TimeStamp = timeStamp;
+            packingHistoryErrorEx.TimeStamp_ = timeStamp_;
+            packingHistoryErrorEx.PackingID = packingID;
             return packingHistoryErrorEx;
         }
         /// <summary>
@@ -4549,71 +4551,93 @@ namespace ItemSightDataServiceClient.ItemSightDataService
         partial void OnIDChanging(string value);
         partial void OnIDChanged();
         /// <summary>
-        /// There are no comments for Property TimeStamp in the schema.
+        /// There are no comments for Property Description_ in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.DateTime TimeStamp
+        public string Description_
         {
             get
             {
-                return this._TimeStamp;
+                return this._Description_;
             }
             set
             {
-                this.OnTimeStampChanging(value);
-                this._TimeStamp = value;
-                this.OnTimeStampChanged();
-                this.OnPropertyChanged("TimeStamp");
+                this.OnDescription_Changing(value);
+                this._Description_ = value;
+                this.OnDescription_Changed();
+                this.OnPropertyChanged("Description_");
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.DateTime _TimeStamp;
-        partial void OnTimeStampChanging(global::System.DateTime value);
-        partial void OnTimeStampChanged();
+        private string _Description_;
+        partial void OnDescription_Changing(string value);
+        partial void OnDescription_Changed();
         /// <summary>
-        /// There are no comments for Property TagID in the schema.
+        /// There are no comments for Property TagID_ in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string TagID
+        public string TagID_
         {
             get
             {
-                return this._TagID;
+                return this._TagID_;
             }
             set
             {
-                this.OnTagIDChanging(value);
-                this._TagID = value;
-                this.OnTagIDChanged();
-                this.OnPropertyChanged("TagID");
+                this.OnTagID_Changing(value);
+                this._TagID_ = value;
+                this.OnTagID_Changed();
+                this.OnPropertyChanged("TagID_");
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _TagID;
-        partial void OnTagIDChanging(string value);
-        partial void OnTagIDChanged();
+        private string _TagID_;
+        partial void OnTagID_Changing(string value);
+        partial void OnTagID_Changed();
         /// <summary>
-        /// There are no comments for Property Description in the schema.
+        /// There are no comments for Property TimeStamp_ in the schema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public string Description
+        public global::System.DateTime TimeStamp_
         {
             get
             {
-                return this._Description;
+                return this._TimeStamp_;
             }
             set
             {
-                this.OnDescriptionChanging(value);
-                this._Description = value;
-                this.OnDescriptionChanged();
-                this.OnPropertyChanged("Description");
+                this.OnTimeStamp_Changing(value);
+                this._TimeStamp_ = value;
+                this.OnTimeStamp_Changed();
+                this.OnPropertyChanged("TimeStamp_");
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private string _Description;
-        partial void OnDescriptionChanging(string value);
-        partial void OnDescriptionChanged();
+        private global::System.DateTime _TimeStamp_;
+        partial void OnTimeStamp_Changing(global::System.DateTime value);
+        partial void OnTimeStamp_Changed();
+        /// <summary>
+        /// There are no comments for Property PackingID in the schema.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public long PackingID
+        {
+            get
+            {
+                return this._PackingID;
+            }
+            set
+            {
+                this.OnPackingIDChanging(value);
+                this._PackingID = value;
+                this.OnPackingIDChanged();
+                this.OnPropertyChanged("PackingID");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private long _PackingID;
+        partial void OnPackingIDChanging(long value);
+        partial void OnPackingIDChanged();
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
         public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]

@@ -4,8 +4,8 @@ using ItemSightDataServiceClient.ItemSightDataService;
 
 namespace ItemSightDataServiceClient {
     public static class ItemSightDataClientExtensions {
-        public static IQueryable<PackingEx> WhereCartonTagID(this IQueryable<PackingEx> cartons, string cartonID) {
-            return cartons.Where(ex => ex.Packing.TagID.Contains(cartonID));
+        public static IQueryable<PackingEx> WhereCartonTagID(this IQueryable<PackingEx> cartons, string tagID) {
+            return cartons.Where(ex => ex.Packing.TagID.Contains(tagID));
         }
 
         public static IQueryable<PackingEx> WhereAnyFactory(this IQueryable<PackingEx> cartons) {
