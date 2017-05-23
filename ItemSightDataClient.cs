@@ -13,7 +13,7 @@ namespace ItemSightDataServiceClient {
         public ItemSightDataClient(string uri) {
             if (string.IsNullOrEmpty(uri)) throw new ArgumentException("Value cannot be null or empty.", "uri");
             _dataContext = new ItemSightDataContext(new Uri(uri));
-            _dataContext.Format.UseJson();
+            //_dataContext.Format.UseJson();
         }
 
         public IQueryable<BizLocationEx> GetMasterRepositories() {
